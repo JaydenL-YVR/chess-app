@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import Chessboard from './Chessboard';
-import './App.css';
+import './app.css';
 
 function App() {
   return (
