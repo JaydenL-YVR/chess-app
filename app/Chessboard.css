@@ -1,4 +1,5 @@
 /* src/Chessboard.css */
+/* src/Chessboard.css */
 .chessboard {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -26,4 +27,8 @@
   .black {
     background-color: #a93226;
     color: #fff;
+  }
+
+  .selected {
+    outline: 2px solid yellow;
   }
