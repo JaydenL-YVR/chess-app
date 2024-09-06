@@ -1,8 +1,7 @@
-// Chessboard.js
+// src/Chessboard.js
 
 "use client";
 
-// src/Chessboard.js
 import React, { useState } from 'react';
 import './Chessboard.css';
 
@@ -97,18 +96,22 @@ function Chessboard() {
   };
 
   return (
-    <div className="chessboard">
-      {board.map((row, rowIndex) =>
-        row.map((piece, colIndex) => (
-          <div
-            key={`${rowIndex}-${colIndex}`}
-            className={`cell ${(rowIndex + colIndex) % 2 === 0 ? 'white' : 'black'} ${selectedPiece && selectedPiece[0] === rowIndex && selectedPiece[1] === colIndex ? 'selected' : ''}`}
-            onClick={() => handleClick(rowIndex, colIndex)}
-          >
-            {piece && pieceIcons[piece]}
-          </div>
-        ))
-      )}
+    <div className="chessboard-container">
+      <h2>{turn.charAt(0).toUpperCase() + turn.slice(1)}'s Turn</h2>
+      <p>Click a piece to select it, then click a destination square to move.</p>
+      <div className="chessboard">
+        {board.map((row, rowIndex) =>
+          row.map((piece, colIndex) => (
+            <div
+              key={`${rowIndex}-${colIndex}`}
+              className={`cell ${(rowIndex + colIndex) % 2 === 0 ? 'white' : 'black'} ${selectedPiece && selectedPiece[0] === rowIndex && selectedPiece[1] === colIndex ? 'selected' : ''}`}
+              onClick={() => handleClick(rowIndex, colIndex)}
+            >
+              {piece && pieceIcons[piece]}
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
