@@ -97,7 +97,7 @@ function Chessboard() {
 
   return (
     <div className="chessboard-container">
-      <h2>{turn.charAt(0).toUpperCase() + turn.slice(1)}'s Turn</h2>
+      <h2>{turn.charAt(0).toUpperCase() + turn.slice(1)}&apos;s Turn</h2>
       <p>Click a piece to select it, then click a destination square to move.</p>
       <div className="chessboard">
         {board.map((row, rowIndex) =>
